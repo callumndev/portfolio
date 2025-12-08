@@ -1,6 +1,31 @@
-export default function Home() {
+import { Hero } from "./components/home/Hero";
+import { About } from "./components/home/About";
+import { Experience } from "./components/home/Experience";
+import { Projects } from "./components/home/Projects";
+import { Connect } from "./components/home/Connect";
+import { getGitHubLanguages } from "./actions/getGitHubLanguages";
+
+export const revalidate = 3600; // Cache page for an hour
+
+export default async function Home() {
+    const githubLanguages = await getGitHubLanguages();
+
     return (
         <main>
+            {/* Hero */}
+            <Hero />
+
+            {/* About */}
+            <About githubLanguages={githubLanguages} />
+
+            {/* Experience */}
+            <Experience />
+
+            {/* Projects */}
+            <Projects />
+
+            {/* Connect */}
+            <Connect />
         </main>
     );
 }
