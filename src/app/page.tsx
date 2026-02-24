@@ -4,6 +4,7 @@ import { Experience } from "./components/home/Experience";
 import { Projects } from "./components/home/Projects";
 import { Connect } from "./components/home/Connect";
 import { getGitHubLanguages } from "./actions/getGitHubLanguages";
+import { experience } from "./data/experience";
 
 export const revalidate = 3600; // Cache page for an hour
 
@@ -19,7 +20,7 @@ export default async function Home() {
             <About githubLanguages={githubLanguages} />
 
             {/* Experience */}
-            <Experience />
+            <Experience experience={experience} />
 
             {/* Projects */}
             <Projects />
