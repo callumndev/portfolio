@@ -6,6 +6,7 @@ import { Connect } from "./components/home/Connect";
 import { getGitHubLanguages } from "./actions/getGitHubLanguages";
 import { experience } from "./data/experience";
 import { projects } from "./data/projects";
+import { connect } from "./data/connect";
 
 export const revalidate = 3600; // Cache page for an hour
 
@@ -27,7 +28,7 @@ export default async function Home() {
             <Projects projects={projects} />
 
             {/* Connect */}
-            <Connect />
+            <Connect connect={connect} />
         </main>
     );
 }
