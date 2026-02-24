@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Button, Center, Flex, Grid, Image, Text } from "@mantine/core";
-import { IconLink, IconMail } from "@tabler/icons-react";
+import { Box, Button, Center, Flex, Grid, Text } from "@mantine/core";
+import { IconLink, IconMail, IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react";
 import { type Connect } from "@/app/data/connect";
 
 
@@ -25,18 +25,14 @@ export function Connect({
                                 <Grid.Col key={e.id} span={{ base: 12, md: 4 }}>
                                     <Box p="md" bdrs="sm" bg="gray.3">
                                         <Flex gap="md" align="flex-start">
-                                            {e.image == "email" ? (
-                                                <IconMail size={50} />
-                                            ) : (
-                                                e.image && (
-                                                    <Image
-                                                        h={50}
-                                                        w={50}
-                                                        src={e.image}
-                                                        alt="Project image"
-                                                        radius="xs"
-                                                    />
-                                                )
+                                            {e.id == "linkedin" && (
+                                                <IconBrandLinkedin size={50} stroke={1.5} />
+                                            )}
+                                            {e.id == "github" && (
+                                                <IconBrandGithub size={50} stroke={1.5} />
+                                            )}
+                                            {e.id == "email" && (
+                                                <IconMail size={50} stroke={1.5} />
                                             )}
 
                                             <Flex direction="column" gap={4} >
